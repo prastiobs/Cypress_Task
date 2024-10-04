@@ -7,7 +7,7 @@ describe('TS_01_Signup_Functionality_Validation', () => {
 
   // Test Case 1: TC_01_Registration Valid Input Format
   it('TC_01_Registration Valid Input Format', () => {
-    // Step 2: Cick "Daftar Jadi Member" button
+    // Step 2: Click "Daftar Jadi Member" button
     cy.get('#daftar-reseller-navbar').click();
 
     // Step 3: Select "Tidak, saya tidak memiliki kode Referral" on radio button
@@ -18,8 +18,8 @@ describe('TS_01_Signup_Functionality_Validation', () => {
 
     // Step 5, 6, 7: Input user details
     cy.get('input[name="name"]').type('User');
-    cy.get('input[name="phone"]').type('0813207334440');
-    cy.get('input[name="email"]').type('0813207334440@xyz.com');
+    cy.get('input[name="phone"]').type('0813207334410');
+    cy.get('input[name="email"]').type('0813207334410@xyz.com');
     cy.get('input[name="password"]').type('A@123456');
 
     // Step 8: Click "Daftar" button
@@ -75,8 +75,8 @@ describe('TS_01_Signup_Functionality_Validation', () => {
 
     // Step 5, 6, 7: Input user details
     cy.get('input[name="name"]').type('User');
-    cy.get('input[name="phone"]').type('0813207334445');
-    cy.get('input[name="email"]').type('0813207334445@xyz.com');
+    cy.get('input[name="phone"]').type('0813207334145');
+    cy.get('input[name="email"]').type('0813207334145@xyz.com');
     cy.get('input[name="password"]').type('A@123456');
 
     // Step 8: Click "Daftar" button
