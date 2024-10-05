@@ -2,6 +2,7 @@ describe('TS_01_Signup_Functionality_Validation', () => {
   beforeEach(() => {
     // Step 1: Access main page
     cy.visit('https://recruitment-staging-queenbee.paradev.io/');
+    cy.wait(500);
     cy.get('svg[width="45"][height="46"]').click();
   });
 
@@ -11,21 +12,24 @@ describe('TS_01_Signup_Functionality_Validation', () => {
     cy.get('#daftar-reseller-navbar').click();
 
     // Step 3: Select "Tidak, saya tidak memiliki kode Referral" on radio button
+    cy.wait(500);
     cy.contains('p', 'Tidak, saya tidak memiliki kode Referral.').click();
 
     // Step 4: Click "Lanjut" button
     cy.contains('button', 'Lanjut').click();
 
     // Step 5, 6, 7: Input user details
+    cy.wait(500);
     cy.get('input[name="name"]').type('User');
-    cy.get('input[name="phone"]').type('0813207334410');
-    cy.get('input[name="email"]').type('0813207334410@xyz.com');
+    cy.get('input[name="phone"]').type('0813207334411');
+    cy.get('input[name="email"]').type('0813207334411@xyz.com');
     cy.get('input[name="password"]').type('A@123456');
 
     // Step 8: Click "Daftar" button
     cy.contains('button', 'Daftar').click();
 
     // Step 9: Click "Whatsapp" button
+    cy.wait(500);
     cy.contains('button', 'Whatsapp').click();
 
     // Step 10: Input valid OTP
@@ -35,6 +39,7 @@ describe('TS_01_Signup_Functionality_Validation', () => {
     cy.contains('button', 'Kirim').click();
 
     // Assertion: Check if the success message is visible
+    cy.wait(500);
     cy.contains('p', 'Verifikasi sukses').should('be.visible');
   });
 
@@ -44,12 +49,14 @@ describe('TS_01_Signup_Functionality_Validation', () => {
     cy.get('#daftar-reseller-navbar').click();
 
     // Step 3: Select "Tidak, saya tidak memiliki kode Referral" on radio button
+    cy.wait(500);
     cy.contains('p', 'Tidak, saya tidak memiliki kode Referral.').click();
 
     // Step 4: Click "Lanjut" button
     cy.contains('button', 'Lanjut').click();
 
     // Step 5, 6, 7: Input user details
+    cy.wait(500);
     cy.get('input[name="name"]').type('User');
     cy.get('input[name="phone"]').type('0813207334442');
     cy.get('input[name="email"]').type('0813207334442@xyz.com');
@@ -57,6 +64,7 @@ describe('TS_01_Signup_Functionality_Validation', () => {
 
     // Step 8: Click "Daftar" button
     cy.contains('button', 'Daftar').click();
+    cy.wait(500);
 
     // Assertion: Check if the warning message is visible
     cy.get('#chakra-modal--header-11').should('be.visible').and('contain', 'Akun sudah terdaftar');
@@ -68,21 +76,24 @@ describe('TS_01_Signup_Functionality_Validation', () => {
     cy.get('#daftar-reseller-navbar').click();
 
     // Step 3: Select "Tidak, saya tidak memiliki kode Referral" on radio button
+    cy.wait(500);
     cy.contains('p', 'Tidak, saya tidak memiliki kode Referral.').click();
 
     // Step 4: Click "Lanjut" button
     cy.contains('button', 'Lanjut').click();
 
     // Step 5, 6, 7: Input user details
+    cy.wait(500);
     cy.get('input[name="name"]').type('User');
-    cy.get('input[name="phone"]').type('0813207334145');
-    cy.get('input[name="email"]').type('0813207334145@xyz.com');
+    cy.get('input[name="phone"]').type('0813207334146');
+    cy.get('input[name="email"]').type('0813207334146@xyz.com');
     cy.get('input[name="password"]').type('A@123456');
 
     // Step 8: Click "Daftar" button
     cy.contains('button', 'Daftar').click();
 
     // Step 9: Click "Whatsapp" button
+    cy.wait(500);
     cy.contains('button', 'Whatsapp').click();
 
     // Step 10: Input valid OTP
