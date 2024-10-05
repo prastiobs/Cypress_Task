@@ -9,39 +9,48 @@ describe('TS_02_Login_Functionality_Validation', () => {
     cy.contains('button', 'Masuk').click();
   });
 
-  // Test Case 4: TC_04_Login Valid via Phone Number
-  it('TC_04_Login Valid via Phone Number', () => {
-    // Step 2: Click "+ Keranjang" button 
-    cy.get('.styles_card-grid__ODf0c').find('.ButtonKeranjangQbee_add-to-cart-text__wDLxl').first().click();
+  // // Test Case 8: TC_08_Complete Checkout And Choose Payment
+  // it('TC_08_Complete Checkout And Choose Payment', () => {
+  //   // Step 2: Click "+ Keranjang" button 
+  //   cy.wait(3000);
+  //   cy.get('.styles_card-grid__ODf0c').find('.ButtonKeranjangQbee_add-to-cart-text__wDLxl').first().click({force: true});
 
-    // cy.get('.styles_card-grid__ODf0c').find('.ButtonKeranjangQbee_add-to-cart-text__wDLxl').first().then(($btn) => {
-    //   cy.log($btn);
-    // });
-    
+  //   // Step 3: Click "Shopping Chart" button
+  //   cy.wait(2000);
+  //   cy.get('.HeaderQbee_total-cart__Acy0A').click();
 
-    // Step 3: Click "+ Keranjang" button 
-    cy.get('.HeaderQbee_total-cart__Acy0A').click();
+  //   // Step 4: Click "+" button
+  //   cy.get('.chakra-button.css-1mcr1j2').eq(1).click();
+  //   cy.get('.chakra-button.css-1mcr1j2').eq(1).click();
+  //   cy.get('.chakra-button.css-1mcr1j2').eq(1).click();
+  //   cy.get('.chakra-button.css-1mcr1j2').eq(1).click();
 
-    // Step 4: Click "Shoping Chart" button
-    cy.get('.chakra-button.css-1mcr1j2').click();
-    cy.get('.chakra-button.css-1mcr1j2').click();
-    cy.get('.chakra-button.css-1mcr1j2').click();
-    cy.get('.chakra-button.css-1mcr1j2').click();
+  //   // Step 5: "Beli Sekarang" button
+  //   cy.get('.chakra-button.css-1pilj7v').click({force: true});
 
-    // // Step 4, 5, 6: Input address details
-    // cy.get('input[name="name"]').type('Rumah saya', { force: true });
-    // cy.get('input[name="recipientName"]').type('Prastio');
-    // cy.get('input[name="recipientPhone"]').type('81809995929');
-    // cy.get('#react-select-2-input').type('Jawa Barat{enter}');
-    // cy.get('#react-select-3-input').type('Kab. Bandung{enter}');
-    // cy.get('#react-select-4-input').type('Bojongsoang{enter}');
-    // cy.get('#react-select-5-input').type('Bojongsoang{enter}');
-    // cy.get('#add-address__receiver-full-address').type('Bojongsoang 1 no 5');
+  //   // Step 6, 7, 8: Select delivery options
+  //   cy.get('.pickDelivery_pickDelivery-upper__gRRQ_').click({force: true});
+  //   cy.get('input[name="delivery-opt"]').first().click();
+  //   cy.get('.pickCourier_title-content__dZgUS').eq(1).find('input[type="radio"]').click();
 
-    // // Step 5: Click "Simpan Alamat" button
-    // cy.contains('button', 'Simpan Alamat').click({ force: true });
+  //   // Step 9: Click "Pilih Pembayaran" button
+  //   cy.contains('button', 'Pilih Pembayaran').click({ force: true });
 
-    // // Assertion: Check if success login and redirect to dashboard page
-    // cy.contains('p', 'Alamat berhasil ditambah').should('be.visible');
+  //   // Assertion: Check if success checkout and redirect to payment page
+  //   cy.contains('h1', 'Ringkasan Pesanan').should('be.visible');
+  // });
+
+  // Test Case 9: TC_09_View Transaction History And Detail
+  it('TC_09_View Transaction History And Detail', () => {
+    // Step 2: Hover on the "Nota" icon and click "Lihat semua"
+    // cy.wait(5000);
+    cy.get('#search-all-product').trigger('mouseover');
+    cy.contains('button', 'Lihat semua').click();
+
+    // Step 3: Click "Detail Transaksi" button
+    cy.contains('button', 'Detail transaksi').click();
+
+    // Assertion: Check if success checkout and redirect to payment page
+    cy.contains('p', 'No. Invoice').should('be.visible');
   });
 });

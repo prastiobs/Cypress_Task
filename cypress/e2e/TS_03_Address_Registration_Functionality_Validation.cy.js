@@ -1,4 +1,4 @@
-describe('TS_02_Login_Functionality_Validation', () => {
+describe('TS_03_Address_Registration_Functionality_Validation', () => {
   beforeEach(() => {
     // Step 1: Access dashboard page
     cy.visit('https://recruitment-staging-queenbee.paradev.io/');
@@ -9,8 +9,8 @@ describe('TS_02_Login_Functionality_Validation', () => {
     cy.contains('button', 'Masuk').click();
   });
 
-  // Test Case 4: TC_04_Login Valid via Phone Number
-  it('TC_04_Login Valid via Phone Number', () => {
+  // Test Case 7: TC_07_Address Registration with Valid Data
+  it('TC_07_Address Registration with Valid Data', () => {
     // Step 2: Click "Kirim ke (PILIH LOKASI)"
     cy.get('.css-4up9p5').click();
 
